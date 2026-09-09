@@ -1,0 +1,16 @@
+# Generic credential / secret patterns. Universal, safe to publish.
+# Extended-regex, matched case-insensitively by scripts/scan.sh.
+#
+# Project-specific identifiers (client names, Teamwork user IDs, private repo
+# names, personal email) go in _local/patterns.txt, which is gitignored.
+
+BEGIN [A-Z ]*PRIVATE KEY
+\bgh[pousr]_[A-Za-z0-9]{16,}
+\bxox[abpsr]-[A-Za-z0-9-]{10,}
+\bA(KIA|SIA)[0-9A-Z]{16}\b
+aws_secret_access_key
+\bsk-(ant-)?[A-Za-z0-9-]{20,}
+\bAIza[0-9A-Za-z_-]{35}\b
+\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.
+/Users/[a-zA-Z0-9._-]+/
+/home/[a-zA-Z0-9._-]+/

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Blocks a commit if staged content trips the secret / PII scanner.
+# Enabled by: git config core.hooksPath .githooks
+exec "$(git rev-parse --show-toplevel)/scripts/scan.sh" --staged
