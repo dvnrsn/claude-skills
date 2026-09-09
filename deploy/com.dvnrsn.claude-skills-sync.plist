@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.dvnrsn.claude-skills-sync</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>$HOME/Code/claude-skills/scripts/scheduled-sync.sh</string>
+  </array>
+
+  <!-- every 14 days, counted from load / last run -->
+  <key>StartInterval</key>
+  <integer>1209600</integer>
+
+  <!-- if the Mac was asleep at the fire time, run once on wake -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/claude-skills-sync.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/claude-skills-sync.log</string>
+</dict>
+</plist>
